@@ -1,0 +1,15 @@
+/* UTILS */
+.padding-top-20 {
+	padding-top: 20rem;
+}
+
+/* STYLES */
+.bg-blue {
+	background-color: #0047b6;
+}
+
+.text-white {
+	color: #fff;
+	font-style: normal;
+	line-height: normal;
+}
