@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# CNI - Desafio Técnico Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Sobre: Projeto desenvolvido para soulução do Desafio Técnico Frontend da CNI.
 
-## Available Scripts
+- Projeto: Sistema de Controle e Acesso aos Funcionários (SCAF)
 
-In the project directory, you can run:
+- Descrição: A proposta do SCAF é simular um sistema da CNI desenvolvido para realizar a (criação, edição e deleção) dos funcionários. E gerar um relatório no formato PDF com os dados consolidados inseridos dos funcionários.
 
-### `npm start`
+- Código Fonte: https://github.com/lp-mateus/cni-desafio-tecnico-front
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Autores
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Mateus Leite Pedrosa [@lp-mateus](https://github.com/lp-mateus)
 
-### `npm test`
+## Funcionalidades
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Acessar o SCAF
+- Criação de funcionários
+- Edição de funcionários
+- Deleção de funcionários
+- Geração de relatório PDF de dados
 
-### `npm run build`
+## Tecnologias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- JavaScript (ES6)
+- Node JS (18.17.1)
+- React JS (18.2.0)
+- react-router-dom
+- bootstrap
+- mui/material
+- react-pdf/renderer
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Documentação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para desenvolvimento do projeto SCAF, o foco foi a implementação da UI com todos requisitos necessários para realização das ações do usuário, além de um design seguindo o System Design da CNI disponível no Figma e um layout também responsivo.
 
-### `npm run eject`
+O projeto está estruturado em:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- App
+- Routes
+- Pages
+- Components
+- Contexts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para implementação do Context foi realizado um bom exemplo de implementação de Gerenciamento de Estado dentro do React, criando-se um estado global compartilhado por todos componentes da aplicação utilizando-se dos Hooks do React em especial (useContext e useReducer).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Instalação e Rodando Localmente
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Após clonar o projeto disponível pelo link do github:
+  https://github.com/lp-mateus/cni-desafio-tecnico-front
 
-## Learn More
+- Verificar versão do Node.js na máquina local:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  node -v
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Navegar até o diretório onde foi clonado o repositório do projeto e realizar os seguintes comandos:
 
-### Code Splitting
+```bash
+  npm install
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Demonstração
 
-### Analyzing the Bundle Size
+Tomei a liberdade de ir além e realizar o deploy do projeto SCAF, pela infraestrutura provedora Netlifly. Dessa forma o projeto também está disponível e acessível pelo link:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+https://mlp-cni-desafio-tecnico-frontend.netlify.app/
 
-### Making a Progressive Web App
+## Sobre mim
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Mateus Leite Pedrosa
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Github: https://github.com/lp-mateus
+- Linkedin: https://www.linkedin.com/in/mateusleitepedrosa/
+- E-mail: mateuspedrosa38@gmail.com
+- Telefone: (61)991792676

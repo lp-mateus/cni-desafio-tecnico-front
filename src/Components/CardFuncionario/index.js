@@ -1,4 +1,8 @@
 import * as React from "react";
+import GlobalContext from "../../Contexts/GlobalContext";
+import IMG_USER from "../../Assets/Images/USER.png";
+
+// Components
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -6,9 +10,24 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import IMG_USER from "../../Assets/Images/USER.png";
+import ModalFuncionario from "../ModalFuncionario";
 
-export default function CardFuncionario() {
+export default function CardFuncionario(props) {
+	const { deleteFuncionario } = React.useContext(GlobalContext);
+	const { id, nome, email, area, cargo } = props;
+
+	// modal - states
+	const [open, setOpen] = React.useState(false);
+
+	// method - edit user
+	const handleUpdate = () => setOpen(true);
+
+	// method - delete user
+	const handleDelete = () => {
+		const payload = { id };
+		deleteFuncionario(payload);
+	};
+
 	return (
 		<Card sx={{ maxWidth: 325 }} className="m-3">
 			<CardMedia
@@ -22,34 +41,42 @@ export default function CardFuncionario() {
 				<div>
 					<p>
 						<b>ID:&nbsp;</b>
-						8238234798
+						{id}
 					</p>
 					<p>
 						<b>Nome:&nbsp;</b>
-						ghnjrgnrjgbrjgb
+						{nome}
 					</p>
 					<p>
 						<b>Email:&nbsp;</b>
-						ubvdirbvdihvbridhbv@email.com
+						{email}
 					</p>
 					<p>
 						<b>Área:&nbsp;</b>
-						djnfbjdnbjdnnbj
+						{area}
 					</p>
 					<p>
 						<b>Cargo:&nbsp;</b>
-						djifbgjidfbgidhjbgifd
+						{cargo}
 					</p>
 				</div>
 			</CardContent>
 			<CardActions disableSpacing>
-				<IconButton aria-label="edit">
+				<IconButton aria-label="edit" onClick={handleUpdate}>
 					<EditIcon />
 				</IconButton>
-				<IconButton aria-label="delete">
+				<IconButton aria-label="delete" onClick={handleDelete}>
 					<DeleteIcon />
 				</IconButton>
 			</CardActions>
+			{open && (
+				<ModalFuncionario
+					open={open}
+					setOpen={setOpen}
+					funcionario={props}
+					scope="UPDATE"
+				/>
+			)}
 		</Card>
 	);
 }

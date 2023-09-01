@@ -1,5 +1,8 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
+import CNI_LOGO_SMALL from "../../Assets/Images/CNI_LOGO_SMALL.png";
+
+// Components
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -18,8 +21,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-//import HomeIcon from '@mui/icons-material/Home';
-import CNI_LOGO_SMALL from "../../Assets/Images/CNI_LOGO_SMALL.png";
 
 const drawerWidth = 240;
 
@@ -133,22 +134,16 @@ export default function Menu() {
 				</DrawerHeader>
 				<Divider />
 				<List>
-					{["Início", "Serviços", "Contatos", "Sobre"].map(
-						(text, index) => (
-							<ListItem key={text} disablePadding>
-								<ListItemButton>
-									<ListItemIcon>
-										{index % 2 === 0 ? (
-											<InboxIcon />
-										) : (
-											<MailIcon />
-										)}
-									</ListItemIcon>
-									<ListItemText primary={text} />
-								</ListItemButton>
-							</ListItem>
-						)
-					)}
+					{["Início", "Serviços", "Contatos", "Sobre"].map((text, index) => (
+						<ListItem key={text} disablePadding>
+							<ListItemButton>
+								<ListItemIcon>
+									{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+								</ListItemIcon>
+								<ListItemText primary={text} />
+							</ListItemButton>
+						</ListItem>
+					))}
 				</List>
 			</Drawer>
 			<Main open={open}>

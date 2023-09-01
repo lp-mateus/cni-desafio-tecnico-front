@@ -1,8 +1,11 @@
 import * as React from "react";
+
+// Components
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import FormFuncionario from "../FormFuncionario";
+import FormFuncionarioEdit from "../FormFuncionarioEdit";
 
 const style = {
 	position: "absolute",
@@ -16,9 +19,8 @@ const style = {
 	p: 4,
 };
 
-export default function ModalFuncionario({ open, setOpen }) {
-	//const [open, setOpen] = React.useState(false);
-	//const handleOpen = () => setOpen(true);
+export default function ModalFuncionario(props) {
+	const { open, setOpen, funcionario, scope } = props;
 	const handleClose = () => setOpen(false);
 
 	return (
@@ -30,35 +32,14 @@ export default function ModalFuncionario({ open, setOpen }) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography
-						id="modal-modal-title"
-						variant="h6"
-						component="h2"
-					>
-						Formulário de Cadastro
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						Duis mollis, est non commodo luctus, nisi erat porttitor
-						ligula.
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						Duis mollis, est non commodo luctus, nisi erat porttitor
-						ligula.
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						Duis mollis, est non commodo luctus, nisi erat porttitor
-						ligula.
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						Duis mollis, est non commodo luctus, nisi erat porttitor
-						ligula.
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						Duis mollis, est non commodo luctus, nisi erat porttitor
-						ligula.
-					</Typography>
-					<Button onClick={handleClose}>Save modal</Button>
-					<Button onClick={handleClose}>Cancel modal</Button>
+					{scope === "UPDATE" ? (
+						<FormFuncionarioEdit setOpen={setOpen} funcionario={funcionario} />
+					) : (
+						<FormFuncionario setOpen={setOpen} />
+					)}
+					<div className="m-0 p-0 w-100 d-flex justify-content-end">
+						<Button onClick={handleClose}>Cancelar</Button>
+					</div>
 				</Box>
 			</Modal>
 		</div>
